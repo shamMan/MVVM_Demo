@@ -31,8 +31,8 @@ public class UseCaseChangeCity extends UseCase<UseCaseChangeCity.RequestValues ,
             }
 
             @Override
-            public void onError(WeatherRepository.ErrorCode errorCode, @Nullable String desc) {
-                getUseCaseCallback().onError();
+            public void onError(int errorCode, @Nullable String desc) {
+                getUseCaseCallback().onError(errorCode,desc);
             }
         });
     }

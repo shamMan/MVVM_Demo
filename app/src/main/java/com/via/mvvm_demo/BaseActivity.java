@@ -8,18 +8,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 /**
  * Created by ShawLiao on 2018/5/8.
  */
 public abstract class BaseActivity extends AppCompatActivity {
     private String TAG = "BaseActivity";
-
-    private LinearLayout mParentLayout;
     // 子类实现
     abstract void loadChildrenFragment();
 
@@ -36,32 +31,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
     /**
      * 初始化contentview
-     */    private void initContentView(int layoutResID) {
-        ViewGroup viewGroup = (ViewGroup) findViewById(android.R.id.content);
-        viewGroup.removeAllViews();
-        mParentLayout = new LinearLayout(this);
-        mParentLayout.setOrientation(LinearLayout.VERTICAL);
-        viewGroup.addView(mParentLayout);
-        LayoutInflater.from(this).inflate(layoutResID, mParentLayout, true);
-
-     }
-
-    @Override
-    public void setContentView(int layoutResID) {
-        Log.i(TAG,"setContentView(int layoutResID) called!");
-        LayoutInflater.from(this).inflate(layoutResID, mParentLayout, true);
-    }
-
-    @Override
-    public void setContentView(View view) {
-        Log.i(TAG,"setContentView(View view) called!");
-        mParentLayout.addView(view);
-    }
-
-    @Override
-    public void setContentView(View view, ViewGroup.LayoutParams params) {
-        Log.i(TAG,"setContentView(View view, ViewGroup.LayoutParams params) called!");
-        mParentLayout.addView(view, params);
+     */
+    private void initContentView(int layoutResID) {
+        setContentView(layoutResID);
     }
 
     public Fragment findFragmentByTag(String tag) {

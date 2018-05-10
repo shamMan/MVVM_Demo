@@ -16,12 +16,8 @@ public interface WeatherRepository extends BaseRepository {
 
     void queryWeather(String cityName,final RepositoryCallBack<Weather> callBack);
 
-    public enum ErrorCode {
-        NONE, TIMEOUT, OTHER
-    }
-
     public interface RepositoryCallBack<R> {
         void onSuccess(@NonNull R response);
-        void onError(ErrorCode errorCode , @Nullable String desc);
+        void onError(int errorCode , @Nullable String desc);
     }
 }

@@ -6,6 +6,9 @@ package com.via.mvvm;
 /**
  * Created by ShawLiao on 2018/5/9.
  */
+
+import android.support.annotation.Nullable;
+
 /**
  * Use cases are the entry points to the domain layer.
  *
@@ -53,6 +56,6 @@ public abstract class UseCase<Q extends UseCase.RequestValues , P extends UseCas
 
     public interface UseCaseCallback<R> {
         void onSuccess(R response);
-        void onError();
+        void onError(int errCode , @Nullable String desc);
     }
 }

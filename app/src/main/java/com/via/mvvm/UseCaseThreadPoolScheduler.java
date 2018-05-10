@@ -8,6 +8,7 @@ package com.via.mvvm;
  */
 
 import android.os.Handler;
+import android.support.annotation.Nullable;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
@@ -54,11 +55,11 @@ public class UseCaseThreadPoolScheduler implements UseCaseScheduler {
 
     @Override
     public <V extends UseCase.ResponseValue> void onError(
-            final UseCase.UseCaseCallback<V> useCaseCallback) {
+            final UseCase.UseCaseCallback<V> useCaseCallback, final int errCode , @Nullable final String desc) {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                useCaseCallback.onError();
+                useCaseCallback.onError(errCode,desc);
             }
         });
     }

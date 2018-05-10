@@ -16,6 +16,22 @@ import org.json.JSONObject;
  */
 public class JsonParser {
 
+    static @NonNull String getStatus(@NonNull JSONObject json) {
+        String status = "parse failed!";
+        if (json != null) {
+            try {
+                JSONArray heWeather6 = json.getJSONArray("HeWeather6");
+                if (heWeather6 != null && heWeather6.length() > 0) {
+                    JSONObject firWeather = heWeather6.getJSONObject(0);
+                    status = firWeather.getString("status");
+                }
+            }
+            catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return status;
+    }
     /**
      *
      * @param json

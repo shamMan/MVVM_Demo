@@ -6,6 +6,9 @@ package com.via.mvvm;
 /**
  * Created by ShawLiao on 2018/5/9.
  */
+
+import android.support.annotation.Nullable;
+
 /**
  * Interface for schedulers, see {@link UseCaseThreadPoolScheduler}.
  */
@@ -17,6 +20,6 @@ public interface UseCaseScheduler {
                                                           final UseCase.UseCaseCallback<V> useCaseCallback);
 
     <V extends UseCase.ResponseValue> void onError(
-            final UseCase.UseCaseCallback<V> useCaseCallback);
+            final UseCase.UseCaseCallback<V> useCaseCallback, int errCode , @Nullable String desc);
 }
 

@@ -7,6 +7,8 @@ package com.via.mvvm;
  * Created by ShawLiao on 2018/5/9.
  */
 
+import android.support.annotation.Nullable;
+
 /**
  * Runs {@link UseCase}s using a {@link UseCaseScheduler}.
  */
@@ -51,8 +53,8 @@ public class UseCaseHandler {
     }
 
     private <V extends UseCase.ResponseValue> void notifyError(
-            final UseCase.UseCaseCallback<V> useCaseCallback) {
-        mUseCaseScheduler.onError(useCaseCallback);
+            final UseCase.UseCaseCallback<V> useCaseCallback,int errCode , @Nullable String desc) {
+        mUseCaseScheduler.onError(useCaseCallback,errCode,desc);
     }
 
     private static final class UiCallbackWrapper<V extends UseCase.ResponseValue> implements
@@ -72,8 +74,8 @@ public class UseCaseHandler {
         }
 
         @Override
-        public void onError() {
-            mUseCaseHandler.notifyError(mCallback);
+        public void onError(int errCode , @Nullable String desc) {
+            mUseCaseHandler.notifyError(mCallback,errCode,desc);
         }
     }
 

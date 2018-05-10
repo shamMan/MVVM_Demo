@@ -3,6 +3,7 @@
  */
 package com.via.mvvm_demo;
 
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.via.mvvm.UseCase;
@@ -33,13 +34,15 @@ public class WeatherPresenter implements Contract.Presenter {
             public void onSuccess(UseCaseChangeCity.ResponseValue response) {
                 Log.d(TAG,"changeCity onSuccess " + response.getWeather());
                 mViewModel.loading.setValue(Boolean.FALSE);
+                mViewModel.loadFailed.setValue(null);
                 mViewModel.weather.setValue(response.getWeather());
             }
 
             @Override
-            public void onError() {
+            public void onError(int errCode , @Nullable String desc) {
                 Log.d(TAG,"changeCity onError ");
                 mViewModel.loading.setValue(Boolean.FALSE);
+                mViewModel.loadFailed.setValue(new WeatherViewModel.Error(errCode,desc));
             }
         });
     }

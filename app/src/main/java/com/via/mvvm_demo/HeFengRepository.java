@@ -11,8 +11,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.via.mvvm_demo.WeatherRepository.ErrorCode.OTHER;
-
 /**
  * Created by ShawLiao on 2018/5/9.
  */
@@ -33,17 +31,22 @@ public class HeFengRepository implements WeatherRepository {
         mHttpClient.httpGetAsycn("s6/weather/now", param, new HttpClient.HttpResult() {
             @Override
             public void onSuccess(JSONObject object) {
-                Weather weather = new Weather();
-                if(JsonParser.parseWeather(object,weather)) {
-                    callBack.onSuccess(weather);
+                String status = JsonParser.getStatus(object);
+                if (status.equals("ok")) {
+                    Weather weather = new Weather();
+                    if(JsonParser.parseWeather(object,weather)) {
+                        callBack.onSuccess(weather);
+                        return;
+                    }
+                    else {
+                        status = "parse json failed!";
+                    }
                 }
-                else {
-                    callBack.onError(OTHER , "parse weather failed!");
-                }
+                callBack.onError(0 , status);
             }
             @Override
             public void onFailed(int errorCode,String desc) {
-                callBack.onError(OTHER , desc);
+                callBack.onError(-1 , desc);
             }
         });
     }

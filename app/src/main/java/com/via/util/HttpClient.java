@@ -22,6 +22,8 @@ import java.net.URLEncoder;
 import java.util.Map;
 import java.util.Set;
 
+import static java.lang.Thread.sleep;
+
 /**
  * Created by ShawLiao on 2018/5/9.
  */
@@ -47,6 +49,12 @@ public class HttpClient {
             @Override
             public void run() {
                 JSONObject object = httpGetData(action, req);
+                try {
+                    sleep(1000);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
                 if (observe != null) {
                     if (object != null)
                         observe.onSuccess(object);
