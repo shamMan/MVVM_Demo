@@ -1,9 +1,17 @@
 /*
  * 1312424234234
  */
-package com.via.mvvm_demo;
 
-import com.via.mvvm_demo.pojo.Weather;
+/*
+ * 1312424234234
+ */
+
+/*
+ * 1312424234234
+ */
+package com.via.weather.data;
+
+import com.via.weather.pojo.Weather;
 import com.via.util.HttpClient;
 
 import org.json.JSONObject;

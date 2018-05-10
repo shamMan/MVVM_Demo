@@ -1,7 +1,15 @@
 /*
  * 1312424234234
  */
-package com.via.mvvm_demo;
+
+/*
+ * 1312424234234
+ */
+
+/*
+ * 1312424234234
+ */
+package com.via.weather.base;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,13 +18,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ViewGroup;
 
+import com.via.mvvm_demo.R;
+
 /**
  * Created by ShawLiao on 2018/5/8.
  */
 public abstract class BaseActivity extends AppCompatActivity {
     private String TAG = "BaseActivity";
     // 子类实现
-    abstract void loadChildrenFragment();
+    abstract protected void loadChildrenFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

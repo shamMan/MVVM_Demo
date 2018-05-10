@@ -1,11 +1,24 @@
 /*
  * 1312424234234
  */
-package com.via.mvvm_demo;
+
+/*
+ * 1312424234234
+ */
+
+/*
+ * 1312424234234
+ */
+package com.via.weather.presentation;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+
+import com.via.weather.base.BaseActivity;
+import com.via.weather.data.HeFengRepository;
+import com.via.weather.data.WeatherRepository;
+import com.via.weather.domian.UseCaseChangeCity;
 
 public class MainActivity extends BaseActivity {
 
@@ -24,6 +37,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Override
     protected void loadChildrenFragment() {
         if (mFragment == null) {
             mFragment = WeatherFragment.newInstance();
