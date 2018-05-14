@@ -1,10 +1,15 @@
 /*
  * 1312424234234
  */
-package com.via.mvvm;
+
+/*
+ * 1312424234234
+ */
+package com.via.demo.base;
 
 /**
  * Created by ShawLiao on 2018/5/9.
  */
 public interface BasePresenter {
+
 }

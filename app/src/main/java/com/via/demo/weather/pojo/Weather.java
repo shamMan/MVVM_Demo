@@ -5,7 +5,7 @@
 /*
  * 1312424234234
  */
-package com.via.weather.pojo;
+package com.via.demo.weather.pojo;
 
 /**
  * Created by ShawLiao on 2018/5/8.

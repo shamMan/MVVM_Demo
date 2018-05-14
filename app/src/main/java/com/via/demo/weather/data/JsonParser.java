@@ -9,11 +9,11 @@
 /*
  * 1312424234234
  */
-package com.via.weather.data;
+package com.via.demo.weather.data;
 
 import android.support.annotation.NonNull;
 
-import com.via.weather.pojo.Weather;
+import com.via.demo.weather.pojo.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;

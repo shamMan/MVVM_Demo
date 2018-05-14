@@ -5,7 +5,7 @@
 /*
  * 1312424234234
  */
-package com.via.weather.presentation;
+package com.via.demo.weather.presentation;
 
 
 import android.arch.lifecycle.Observer;
@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import com.via.mvvm_demo.R;
 import com.via.mvvm_demo.databinding.FragmentWeatherBinding;
-import com.via.weather.presentation.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -5,22 +5,23 @@
 /*
  * 1312424234234
  */
-package com.via.weather.presentation;
+package com.via.demo.weather.presentation;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.text.Editable;
 
-import com.via.weather.pojo.Weather;
+import com.via.demo.weather.pojo.Weather;
 
 /**
  * Created by ShawLiao on 2018/5/8.
  */
-public class WeatherViewModel extends AndroidViewModel {
+public class WeatherViewModel extends ViewModel {
 
+    private Context mContext;
     // 天气查询结果
     public MutableLiveData<Weather> weather = new MutableLiveData<>();
     // 查询中状态标志
@@ -30,13 +31,9 @@ public class WeatherViewModel extends AndroidViewModel {
     // 查询失败状态标志
     public MutableLiveData<Error> loadFailed = new MutableLiveData<>();
 
-    private Context mContext;
-
     public WeatherViewModel(
             Application context) {
-        super(context);
-        mContext = context.getApplicationContext(); // Force use of Application Context.
-
+        mContext = context;
         Weather defaultWeather = new Weather();
         defaultWeather.setCity("上海");
         weather.setValue(defaultWeather);

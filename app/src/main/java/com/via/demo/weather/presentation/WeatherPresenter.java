@@ -5,14 +5,14 @@
 /*
  * 1312424234234
  */
-package com.via.weather.presentation;
+package com.via.demo.weather.presentation;
 
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.via.mvvm.UseCase;
-import com.via.mvvm.UseCaseHandler;
-import com.via.weather.domian.UseCaseChangeCity;
+import com.via.demo.base.UseCase;
+import com.via.demo.base.UseCaseHandler;
+import com.via.demo.weather.domian.UseCaseChangeCity;
 
 /**
  * Created by ShawLiao on 2018/5/9.

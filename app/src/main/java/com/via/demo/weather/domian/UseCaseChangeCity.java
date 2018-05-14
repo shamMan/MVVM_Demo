@@ -9,14 +9,14 @@
 /*
  * 1312424234234
  */
-package com.via.weather.domian;
+package com.via.demo.weather.domian;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.via.mvvm.UseCase;
-import com.via.weather.data.WeatherRepository;
-import com.via.weather.pojo.Weather;
+import com.via.demo.base.UseCase;
+import com.via.demo.weather.data.WeatherRepository;
+import com.via.demo.weather.pojo.Weather;
 
 /**
  * Created by ShawLiao on 2018/5/9.

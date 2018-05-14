@@ -9,9 +9,9 @@
 /*
  * 1312424234234
  */
-package com.via.weather.data;
+package com.via.demo.weather.data;
 
-import com.via.weather.pojo.Weather;
+import com.via.demo.weather.pojo.Weather;
 import com.via.util.HttpClient;
 
 import org.json.JSONObject;

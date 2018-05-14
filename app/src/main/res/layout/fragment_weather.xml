@@ -2,10 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android" >
     <data>
         <import type="android.arch.lifecycle.MutableLiveData" />
-        <import type="com.via.weather.presentation.WeatherViewModel" />
-        <import type="com.via.weather.presentation.Contract.Presenter" />
-        <import type="com.via.weather.pojo.Weather" />
-        <import type="com.via.weather.presentation.Contract" />
+        <import type="com.via.demo.weather.presentation.WeatherViewModel" />
+        <import type="com.via.demo.weather.presentation.Contract.Presenter" />
+        <import type="com.via.demo.weather.pojo.Weather" />
+        <import type="com.via.demo.weather.presentation.Contract" />
         <import type="android.view.View" />
         <variable name="weather" type="MutableLiveData&lt;Weather&gt;"/>
         <variable name="cityName" type="MutableLiveData&lt;String&gt;"/>
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="20dp"
-            tools:context="com.via.weather.WeatherFragment">
+            tools:context="com.via.demo.WeatherFragment">
 
             <LinearLayout
                 android:layout_width="match_parent"

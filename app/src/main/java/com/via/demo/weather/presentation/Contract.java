@@ -5,14 +5,14 @@
 /*
  * 1312424234234
  */
-package com.via.weather.presentation;
+package com.via.demo.weather.presentation;
 
 /**
  * Created by ShawLiao on 2018/5/8.
  */
 
-import com.via.mvvm.BasePresenter;
-import com.via.mvvm.BaseView;
+import com.via.demo.base.BasePresenter;
+import com.via.demo.base.BaseView;
 
 /**
  * VP 接口
