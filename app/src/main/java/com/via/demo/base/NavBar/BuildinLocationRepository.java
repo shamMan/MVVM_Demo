@@ -96,10 +96,12 @@ public class BuildinLocationRepository implements LocationRepository {
     }
 
     private void broadcastLocation(Location location) {
-        Intent intent = new Intent();
-        intent.setAction(INTENT_ACTION_LOCATION_UPDATED);
-        intent.putExtra(INTENT_EXTRA_LONGITUDE, location.getLongitude());
-        intent.putExtra(INTENT_EXTRA_LATITUDE, location.getLatitude());
-        mContext.sendBroadcast(intent);
+        if (location != null) {
+            Intent intent = new Intent();
+            intent.setAction(INTENT_ACTION_LOCATION_UPDATED);
+            intent.putExtra(INTENT_EXTRA_LONGITUDE, location.getLongitude());
+            intent.putExtra(INTENT_EXTRA_LATITUDE, location.getLatitude());
+            mContext.sendBroadcast(intent);
+        }
     }
 }

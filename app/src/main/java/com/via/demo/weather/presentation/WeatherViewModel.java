@@ -13,6 +13,7 @@ import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.text.Editable;
+import android.util.Log;
 
 import com.via.demo.weather.pojo.Weather;
 
@@ -39,6 +40,11 @@ public class WeatherViewModel extends ViewModel {
         weather.setValue(defaultWeather);
         loading.setValue(Boolean.FALSE);
         loadFailed.setValue(null);
+    }
+
+    @Override
+    public void onCleared() {
+        Log.d("WeatherViewModel","onCleared() called");
     }
 
     public void cityNameChanged(Editable editable) {

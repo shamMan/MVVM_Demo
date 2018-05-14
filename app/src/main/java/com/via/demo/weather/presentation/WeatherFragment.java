@@ -9,8 +9,10 @@ package com.via.demo.weather.presentation;
 
 
 import android.arch.lifecycle.Observer;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -20,6 +22,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.via.demo.calendar.CalendarActivity;
 import com.via.mvvm_demo.R;
 import com.via.mvvm_demo.databinding.FragmentWeatherBinding;
 
@@ -56,6 +59,15 @@ public class WeatherFragment extends Fragment implements Contract.View {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_weather,container,false);
         setUpViewModel();
         setUpBinding();
+
+        mBinding.btCalendar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return mBinding.getRoot();
     }
 
